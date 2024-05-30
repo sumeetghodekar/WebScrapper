@@ -19,6 +19,8 @@ repositories {
 
 dependencies {
 
+    //TestNG
+    testImplementation group: 'org.testng', name: 'testng', version: '7.7.1'
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
    
@@ -28,6 +30,21 @@ dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation 'org.seleniumhq.selenium:selenium-java:4.14.0'
 
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
+}
+
+test
+{
+    useTestNG()
+    {
+        suites 'src/test/resources/testng.xml'
+    }
+    testLogging
+    {
+        showStandardStreams = true
+        events "passed","skipped","failed"
+    }
 }
 
 //task startScript(type:Exec) {
