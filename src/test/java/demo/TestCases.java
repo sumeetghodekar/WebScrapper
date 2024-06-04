@@ -235,8 +235,8 @@ public class TestCases
                     String awardText = awardTitle.getText();
 
 
-                    WebElement bestPictureCell = driver.findElement(By.xpath("//td[@class='film-best-picture']"));
-                    boolean isWinner = bestPictureCell.findElements(By.tagName("i")).size() > 0 && bestPictureCell.findElement(By.tagName("i")).isDisplayed();
+                    boolean isWinner = (i == 0);
+                    
                     
                     HashMap<String, Object> movieData = new HashMap<>();
                     movieData.put("Epoch Time", Instant.now().getEpochSecond());
